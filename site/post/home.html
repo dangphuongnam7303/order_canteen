@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../../css/style.css" />
+    <link rel="stylesheet" href="../../css/base.css" />
+    <script src="../Javascript/main.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
+</head>
+
+<body style="background: linear-gradient(145deg, #e6e6e6, #ffffff);
+" class="font-montserrat">
+    <header class="hidden lg:block text-gray-700 bg-white border-b border-gray-200 sticky top-0 z-50">
+        <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
+            <a class="flex font title-font font-medium items-center mb-4 md:mb-0" href="#" target="_blank">
+                <span class="text-orange-600">poly</span><span class="text-blue-600 font-semibold">F</span><span class="text-orange-600 font-semibold">oo</span><span class="text-green-600 font-semibold">d</span>
+            </a>
+            <nav class="md:ml-auto flex flex-wrap items-center text-base justify-center">
+                <ul class="menu flex w-full justify-center gap-6 text-sm uppercase">
+                    <li><a href="#">Trang chủ</a></li>
+                    <li><a href="#">Giới thiệu</a></li>
+                    <li><a href="#">Sản Phẩm</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li>
+                        <div class="relative inline-block text-left">
+                            <div>
+                                <button type="button" id="menu-drop" aria-expanded="true" aria-haspopup="true">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                                    </svg>
+                                </button>
+                            </div>
+                            <div id="sub-menu-drop" class="animate-down hidden absolute right-0 z-10 mt-2 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none" role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabindex="-1">
+                                <div class="py-1" role="none">
+                                    <!-- Active: "bg-gray-100 text-gray-900", Not Active: "text-gray-700" -->
+                                    <a href="#" class="text-gray-700 block px-4 py-2 text-sm" role="menuitem" tabindex="-1" id="menu-item-0">
+                                        Cài đặt tài khoản
+                                    </a>
+                                    <a href="#" class="text-gray-700 block px-4 py-2 text-sm" role="menuitem" tabindex="-1" id="menu-item-1">
+                                        Hỗ trợ
+                                    </a>
+                                    <a href="#" class="text-gray-700 block px-4 py-2 text-sm" role="menuitem" tabindex="-1" id="menu-item-2">
+                                        Đơn hàng của tôi
+                                    </a>
+                                    <?php 
+                                        if(isset($_SESSION['user'])){
+                                            echo '<a href="logout.php" class="text-gray-700 block px-4 py-2 text-sm" role="menuitem" tabindex="-1" id="menu-item-3">
+                                            Đăng xuất
+                                        </a>';
+                                        }else{
+                                            echo '<a href="login.php" class="text-gray-700 block px-4 py-2 text-sm" role="menuitem" tabindex="-1" id="menu-item-3">
+                                            Đăng nhập
+                                        </a>';
+                                        }
+                                    ?>
+                                      
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <section  class="grid grid-cols-1 gap-6 my-5 w-full container px-2 mx-auto">
+  <aside class="">
+    <div
+      style="background-image: url('../IMG/anh-bia.jpg')"
+      class="shadow rounded-lg"
+    >
+      <div
+        class="flex flex-col gap-1 text-center items-center backdrop-blur-sm p-16"
+      >
+        <img
+          class="h-32 w-32 bg-white p-2 rounded-full shadow mb-4"
+          src="../../content/images/posts/tien.jpg"
+          alt=""
+        />
+        <p class="font-semibold text-white">Lê Công Tiến</p>
+        <p class="text-white text-xs">congtiendev</p>
+        <div
+          class="text-sm leading-normal text-gray-100 flex justify-center items-center"
+        >
+          <svg
+            viewBox="0 0 24 24"
+            class="mr-1"
+            width="16"
+            height="16"
+            stroke="currentColor"
+            stroke-width="2"
+            fill="none"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+            <circle cx="12" cy="10" r="3"></circle>
+          </svg>
+          Hà Nội, Việt Nam
+
+        </div>
+      </div>
+    </div>
+  </aside>
+
+
+<article class="lg:px-10">
+ <form id="new__post" action="./index.php" class="relative bg-white shadow rounded-lg mb-6 p-4" method="post" enctype="multipart/form-data">
+    <textarea name="content" placeholder="Bạn đang nghĩ gì..." class="w-full rounded-lg p-3 text-sm focus:outline-none bg-gray-100 border border-transparent appearance-none rounded-tg placeholder-gray-400"></textarea>
+    <div class="image-upload absolute top-7 right-7">
+      <label for="file-input">
+        <span class="flex items-center transition ease-out duration-300 hover:bg-blue-500 hover:text-white bg-blue-100 w-10 h-10 px-2 rounded-full text-blue-400 cursor-pointer">
+          <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1">
+            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+            <circle cx="8.5" cy="8.5" r="1.5"></circle>
+            <polyline points="21 15 16 10 5 21"></polyline>
+          </svg>
+        </span>
+      </label>
+      <input id="file-input" name="image[]" type="file" class="hidden" multiple />
+      <input name="post_id" type="number" class="hidden" value="<?php if (check_exist() > 0) {
+                                                                  echo check_exist() + 1;
+                                                                } else {
+                                                                  echo 1;
+                                                                }
+                                                                ?>" multiple />
+    </div>
+<div class="btn__group flex justify-between gap-1">
+    <button style="box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37); backdrop-filter: blur(2.5px);
+-webkit-backdrop-filter: blur(2.5px); border-radius: 10px; border: 1px solid
+rgba(255, 255, 255, 0.18);
+" name="btn_insert" class="flex items-center mt-3 py-2 px-3 right-4 rounded-lg text-sm bg-blue-600 text-white shadow-lg">
+      Đăng
+      <svg class="ml-1" viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="22" y1="2" x2="11" y2="13"></line>
+        <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+      </svg>
+    </button>
+    <a href="#" style="box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37); backdrop-filter: blur(2.5px);
+-webkit-backdrop-filter: blur(2.5px); border-radius: 10px; border: 1px solid
+rgba(255, 255, 255, 0.18);
+"
+  class="flex items-center gap-2 mt-3 py-2 px-4 rounded-lg text-sm bg-red-600 text-white shadow-lg"
+>
+  <span>Kiểm duyệt</span>
+ <svg
+  xmlns="http://www.w3.org/2000/svg"
+  fill="none"
+  viewBox="0 0 24 24"
+  stroke-width="1.5"
+  stroke="currentColor"
+  class="w-5 h-5"
+>
+  <path
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z"
+  />
+</svg>
+
+
+</a>
+</div>
+  </form>
+  <div class="bg-white shadow-lg rounded-lg mb-6 relative">
+    <!-- Xóa post -->
+    <div class="menu__post absolute top-0 right-0">
+  <form  id="delete_post" class="relative" method="post" action="./index.php">
+    <button type="button" id="post__menu">
+      <svg
+  xmlns="http://www.w3.org/2000/svg"
+  fill="none"
+  viewBox="0 0 24 24"
+  stroke-width="1.5"
+  stroke="currentColor"
+  class="w-10 h-10"
+>
+  <path
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    d="M6.75 12a.75.75 0 11-1.5 0 .75.75 0 011.5 0zM12.75 12a.75.75 0 11-1.5 0 .75.75 0 011.5 0zM18.75 12a.75.75 0 11-1.5 0 .75.75 0 011.5 0z"
+  />
+</svg>
+    </button>
+    <div style="box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37); backdrop-filter:
+blur(2.5px); -webkit-backdrop-filter: blur(2.5px); border-radius: 10px; border:
+1px solid rgba(255, 255, 255, 0.18); "
+  class="post__menu__dropdown animate-popup absolute top-6 right-2 h-12 px-2 py-3  hidden">
+      <button class="btn__delete flex gap-2 items-center text-lg text-gray-500 font-medium" name="btn_delete">
+        <span>Xóa</span>
+        <svg
+  xmlns="http://www.w3.org/2000/svg"
+  fill="none"
+  viewBox="0 0 24 24"
+  stroke-width="1.5"
+  stroke="currentColor"
+  class="w-6 h-6"
+>
+  <path
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    d="M14.74 9l-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 01-2.244 2.077H8.084a2.25 2.25 0 01-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 00-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 013.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 00-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 00-7.5 0"
+  />
+</svg>
+
+      </button>
+    </div>
+    <button class="" name="btn_delete" type="submit"></button>
+    <input type="number" name="post_id" class="hidden" value="<?php echo $post_id; ?>" />
+    </form>
+    </div>
+    <div class="flex flex-row px-2 py-3 mx-3">
+      <div class="w-auto h-auto rounded-full">
+        <img class="w-12 h-12 object-cover rounded-full shadow cursor-pointer" alt="User avatar" src="../../content/images/posts/son.jpg" />
+      </div>
+      <div class="flex flex-col mb-2 ml-4 mt-1">
+        <div class="text-gray-600 text-sm font-semibold">
+          Nguyễn Công Sơn
+        </div>
+        
+        <div class="flex w-full mt-1">
+          <div class="text-gray-700 font-light text-xs">1 giờ trước</div>
+        </div>
+      </div>
+    </div>
+    <div class="border-b border-gray-100"></div>
+    <div class="text-gray-500 text-sm mt-4 mx-3 p-2">
+      Vãi loz luon dau cut moi ! 
+    </div>
+
+    <div class="text-gray-400 font-medium text-sm mb-7 mt-6 mx-3 px-2">
+      <div class="flex flex-wrap justify-center  gap-2">
+        <div class="overflow-hidden rounded-xl w-[47%]">
+          <img class="h-full w-full object-cover" src="../IMG/slide1.jpg" alt="" />
+        </div>
+        <div class="overflow-hidden rounded-xl w-[47%]
+">
+          <img class="h-full w-full object-cover" src="../IMG/slide2.jpg" alt="" />
+        </div>
+        <div class="overflow-hidden rounded-xl w-[47%]
+">
+          <img class="h-full w-full object-cover" src="../IMG/slide3.jpg" alt="" />
+        </div>
+        
+        
+        <div class="relative overflow-hidden rounded-xl w-[47%]
+">
+          <div class="text-white text-sm absolute inset-0 bg-slate-900/80 flex justify-center items-center">
+            + Xem thêm 
+          </div>
+          <img class="h-full w-full object-cover" src="../IMG/background-product.jpg" alt="" />
+        </div>
+      </div>
+    </div>
+ <form name="check_posts" action="" method="POST" class="flex my-5 gap-4 justify-end mr-10 mb-5 border-t border-gray-100">
+   <button name="btn_confirm" class="flex gap-1 items-center mt-3 py-3 px-4 rounded-lg  bg-green-500 text-white shadow-lg">
+      <svg class="mr-1" viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="20 6 9 17 4 12"></polyline>
+      </svg>
+      Duyệt
+    </button>
+    <button name="btn_delete" class="flex gap-1 items-center mt-3 py-2 px-4 rounded-lg  bg-red-600 text-white shadow-lg">
+    <span>Xóa</span> <svg
+  xmlns="http://www.w3.org/2000/svg"
+  fill="none"
+  viewBox="0 0 24 24"
+  stroke-width="1.5"
+  stroke="currentColor"
+  class="w-6 h-6"
+>
+  <path
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    d="M14.74 9l-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 01-2.244 2.077H8.084a2.25 2.25 0 01-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 00-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 013.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 00-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 00-7.5 0"
+  />
+</svg></button>
+    </form>
+    <div class="flex justify-start mb-4 border-t border-gray-100">
+      <div class="flex w-full mt-1 pt-2 pl-5">
+        <span class="bg-white transition ease-out duration-300 hover:text-red-500 border w-8 h-8 px-2 pt-2 text-center rounded-full text-gray-400 cursor-pointer mr-2">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" width="14px" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z"></path>
+          </svg>
+        </span>
+      </div>
+      <div class="flex justify-end w-full mt-1 pt-2 pr-5">
+        <span class="transition ease-out duration-300 hover:bg-blue-50 bg-blue-100 w-8 h-8 px-2 py-2 text-center rounded-full text-blue-400 cursor-pointer mr-2">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" width="14px" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z"></path>
+          </svg>
+        </span>
+        <span class="transition ease-out duration-300 hover:bg-gray-50 bg-gray-100 h-8 px-2 py-2 text-center rounded-full text-gray-100 cursor-pointer">
+          <svg class="h-4 w-4 text-red-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"></path>
+          </svg>
+        </span>
+      </div>
+    </div>
+
+
+
+    <div class="flex w-full border-t border-gray-100">
+      <div class="mt-3 mx-5 flex items-center gap-5 text-xs">
+        <span class="flex text-gray-700 font-normal rounded-md gap-1 items-center">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-gray-400">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 12.76c0 1.6 1.123 2.994 2.707 3.227 1.087.16 2.185.283 3.293.369V21l4.076-4.076a1.526 1.526 0 011.037-.443 48.282 48.282 0 005.68-.494c1.584-.233 2.707-1.626 2.707-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0012 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018z" />
+          </svg>
+
+          <div class="ml-1 text-gray-400 text-ms">30</div>
+        </span>
+        <span class="flex text-gray-700 font-normal rounded-md items-center">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-gray-400">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z" />
+            <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+          </svg>
+
+          <span class="ml-1 text-gray-400 text-ms">6000</span>
+        </span>
+      </div>
+      <div class="mt-3 mx-5 w-full flex justify-end text-xs">
+        <div class="flex text-gray-700 rounded-md mb-2 mr-4 items-center">
+          Lượt thích
+          <div class="ml-1 text-gray-400 text-ms">120</div>
+        </div>
+      </div>
+    </div>
+    <div class="text-black p-4 antialiased flex">
+      <img class="rounded-full h-8 w-8 mr-2 mt-1" src="../../content/images/posts/son.jpg" />
+      <div>
+        <div class="bg-gray-100 rounded-lg px-4 pt-2 pb-2.5">
+          <div class="font-semibold text-sm leading-relaxed">
+            Nguyễn Công Sơn
+          </div>
+          <div class="text-xs leading-snug md:leading-normal max-w-lg ">
+           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa, sit corporis molestiae at doloribus aliquam assumenda et saepe illo repudiandae, temporibus maiores natus quibusdam sequi. Maxime laboriosam dolorum id quod?
+          </div>
+          <div class="comment__img my-2">
+            <img class="h-20" src="../../content/images/posts/638867157c6fa_Ảnh chụp màn hình_20221022_024330.png" />
+          </div>
+          
+        </div>
+        <div class="text-xs mt-0.5 text-gray-500">1 giờ trước</div>
+      </div>
+    </div>
+    <form class="relative flex items-center self-center w-full max-w-xl p-4 overflow-hidden text-gray-600 focus-within:text-gray-400">
+      <img class="w-10 h-10 object-cover rounded-full shadow mr-2 cursor-pointer" alt="User avatar" src="../../content/images/posts/son.jpg" />
+      <span class="absolute inset-y-0 right-0 flex items-center pr-6">
+        <button type="submit" class="p-1 focus:outline-none focus:shadow-none hover:text-blue-500">
+          <svg class="w-6 h-6 transition ease-out duration-300 hover:text-blue-500 text-gray-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+          </svg>
+        </button>
+      </span>
+    
+
+      <input type="search" class="w-full py-2 pl-4 pr-10 text-sm bg-gray-100 border border-transparent appearance-none rounded-tg placeholder-gray-400" style="border-radius: 25px" placeholder="Nhập bình luận..." autocomplete="off" />
+
+     
+    </form>
+  </div>
+
+  <div class="bg-white shadow rounded-lg">
+    <div class="flex flex-row px-2 py-3 mx-3">
+      <div class="w-auto h-auto rounded-full border-2">
+        <img class="w-12 h-12 object-cover rounded-full shadow cursor-pointer" alt="User avatar" src="
+                  ../../content/images/posts/son.jpg" />
+      </div>
+      <div class="flex flex-col mb-2 ml-4 mt-1">
+        <div class="text-gray-600 text-sm font-semibold">
+          Nguyễn Công Sơn
+        </div>
+        <div class="flex w-full mt-1">
+          <span class="text-gray-400 font-thin text-xs">• 1 ngày </span>
+        </div>
+      </div>
+    </div>
+    <div class="border-b border-gray-100"></div>
+
+    <p class="text-gray-500 text-sm mb-6 mx-3 px-2">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque in
+      ipsum id orci porta dapibus.
+    </p>
+    <div class="text-gray-400 font-medium text-sm mb-7 mt-6 mx-3 px-2">
+      <img class="rounded w-full" src="../IMG/anh-bia.jpg" />
+    </div>
+
+    <div class="flex justify-start mb-4 border-t border-gray-100">
+      <div class="flex w-full mt-1 pt-2 pl-5">
+        <span class="bg-white transition ease-out duration-300 hover:text-red-500 border w-8 h-8 px-2 pt-2 text-center rounded-full text-gray-400 cursor-pointer mr-2">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" width="14px" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z"></path>
+          </svg>
+        </span>
+        <img class="inline-block object-cover w-8 h-8 text-white border-2 border-white rounded-full shadow-sm cursor-pointer" src="../../content/images/posts/son.jpg" alt="" />
+
+        <img class="inline-block object-cover w-8 h-8 -ml-2 text-white border-2 border-white rounded-full shadow-sm cursor-pointer" src="../../content/images/posts/son.jpg" alt="" />
+        <img class="inline-block object-cover w-8 h-8 -ml-2 text-white border-2 border-white rounded-full shadow-sm cursor-pointer" src="../../content/images/posts/son.jpg" alt="" />
+      </div>
+      <div class="flex justify-end w-full mt-1 pt-2 pr-5">
+        <span class="transition ease-out duration-300 hover:bg-blue-50 bg-blue-100 w-8 h-8 px-2 py-2 text-center rounded-full text-blue-400 cursor-pointer mr-2">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" width="14px" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z"></path>
+          </svg>
+        </span>
+        <span class="transition ease-out duration-300 hover:bg-gray-50 bg-gray-100 h-8 px-2 py-2 text-center rounded-full text-gray-100 cursor-pointer">
+          <svg class="h-4 w-4 text-red-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"></path>
+          </svg>
+        </span>
+      </div>
+    </div>
+    <div class="flex w-full border-t border-gray-100">
+      <div class="mt-3 mx-5 flex items-center gap-5 text-xs">
+        <span class="flex text-gray-700 font-normal rounded-md gap-1 items-center">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-gray-400">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 12.76c0 1.6 1.123 2.994 2.707 3.227 1.087.16 2.185.283 3.293.369V21l4.076-4.076a1.526 1.526 0 011.037-.443 48.282 48.282 0 005.68-.494c1.584-.233 2.707-1.626 2.707-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0012 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018z" />
+          </svg>
+
+          <div class="ml-1 text-gray-400 text-ms">30</div>
+        </span>
+        <span class="flex text-gray-700 font-normal rounded-md items-center">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-gray-400">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z" />
+            <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+          </svg>
+
+          <span class="ml-1 text-gray-400 text-ms">6000</span>
+        </span>
+      </div>
+      <div class="mt-3 mx-5 w-full flex justify-end text-xs">
+        <div class="flex text-gray-700 rounded-md mb-2 mr-4 items-center">
+          Lượt thích
+          <div class="ml-1 text-gray-400 text-ms">120</div>
+        </div>
+      </div>
+    </div>
+    <div class="text-black p-4 antialiased flex">
+      <img class="rounded-full h-8 w-8 mr-2 mt-1" src="../../content/images/posts/son.jpg" />
+      <div>
+        <div class="bg-gray-100 rounded-lg px-4 pt-2 pb-2.5">
+          <div class="font-semibold text-sm leading-relaxed">
+            Nguyễn Công Sơn
+          </div>
+          <div class="text-xs leading-snug md:leading-normal">
+            Fuck wibu !
+          </div>
+        </div>
+        <div class="text-xs mt-0.5 text-gray-500">1 giờ trước</div>
+      </div>
+    </div>
+    <form class="relative flex items-center self-center w-full max-w-xl p-4 overflow-hidden text-gray-600 focus-within:text-gray-400">
+      <img class="w-10 h-10 object-cover rounded-full shadow mr-2 cursor-pointer" alt="User avatar" src="../../content/images/posts/son.jpg" />
+      <span class="absolute inset-y-0 right-0 flex items-center pr-6">
+        <button type="submit" class="p-1 focus:outline-none focus:shadow-none hover:text-blue-500">
+          <svg class="w-6 h-6 transition ease-out duration-300 hover:text-blue-500 text-gray-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+          </svg>
+        </button>
+      </span>
+      <input type="search" class="w-full py-2 pl-4 pr-10 text-sm bg-gray-100 border border-transparent appearance-none rounded-tg placeholder-gray-400" style="border-radius: 25px" placeholder="Nhập bình luận..." autocomplete="off" />
+    </form>
+  </div>
+</article>
+</section>
+ <footer class="text-gray-700 pt-24 mx-auto">
+     <section class="w-full grid gap-4 grid-cols-2 md:grid-cols-3 lg:grid-cols-4 px-8 md:px-14 lg:px-20">
+         <div class="footer__item-logo ml-5">
+             <img class="h-16" src="../IMG/logo.png" alt="logo" />
+             <p class="footer-item-title--desc mt-4 text-gray-500 text-sm max-w-[220px]">
+                 Website được phát triển bởi đội ngũ sinh viên FPT Polytechnic.
+             </p>
+         </div>
+         <div class="footer__item mb-5 ml-5">
+             <h1 class="footer__item-title text-xl block mb-3 font-bold">
+                 Liên hệ
+             </h1>
+             <ul class="footer__item-list mt-3">
+                 <li class="footer__item-list-item">
+                     <a href="#" class="footer__item-list-item-link block mb-3 text-sm text-gray-500">
+                         Giới thiệu
+                     </a>
+                 </li>
+                 <li class="footer__item-list-item">
+                     <a href="#" class="footer__item-list-item-link block mb-3 text-sm text-gray-500">
+                         Góp ý
+                     </a>
+                 </li>
+                 <li class="footer__item-list-item">
+                     <a href="#" class="footer__item-list-item-link block mb-3 text-sm text-gray-500">
+                         Tuyển dụng
+                     </a>
+                 </li>
+                 <li class="footer__item-list-item">
+                     <a href="#" class="footer__item-list-item-link block mb-3 text-sm text-gray-500">
+                         Điều khoản
+                     </a>
+                 </li>
+             </ul>
+         </div>
+         <div class="footer__item mb-5 ml-5">
+             <h1 class="footer__item-title text-xl block mb-3 font-bold">
+                 Hỗ trợ
+             </h1>
+             <ul class="footer__item-list mt-3">
+                 <li class="footer__item-list-item">
+                     <a href="#" class="footer__item-list-item-link block mb-3 text-sm text-gray-500">
+                         Hướng dẫn mua hàng
+                     </a>
+                 </li>
+                 <li class="footer__item-list-item">
+                     <a href="#" class="footer__item-list-item-link block mb-3 text-sm text-gray-500">
+                         Hướng dẫn thanh toán
+                     </a>
+                 </li>
+                 <li class="footer__item-list-item">
+                     <a href="#" class="footer__item-list-item-link block mb-3 text-sm text-gray-500">
+                         Khiếu nại
+                     </a>
+                 </li>
+
+                 <li class="footer__item-list-item">
+                     <a href="#" class="footer__item-list-item-link block mb-3 text-sm text-gray-500">
+                         FAQs
+                     </a>
+                 </li>
+             </ul>
+         </div>
+
+         <div class="footer__item mb-5 ml-5">
+             <h1 class="footer__item-title text-xl block mb-3 font-bold">
+                 ĐỊA CHỈ
+             </h1>
+             <ul class="footer__item-list mt-3">
+                 <li class="footer__item-list-item">
+                     <a href="#" class="footer__item-list-item-link block mb-3 text-sm text-gray-500">
+                         Tòa nhà FPT Polytechnic, P. Trịnh Văn Bô, Xuân Phương, Nam Từ
+                         Liêm, Hà Nội, Việt Nam
+                     </a>
+                 </li>
+                 <li class="footer__item-list-item">
+                     <a href="#" class="footer__item-list-item-link block mb-3 text-sm text-gray-500">
+                         https://caodang.fpt.edu.vn/
+                     </a>
+                 </li>
+                 <li class="footer__item-list-item">
+                     <a href="#" class="footer__item-list-item-link block mb-3 text-sm text-gray-500">
+                         098.172.5836
+                     </a>
+                 </li>
+                 <li class="footer__item-list-item">
+                     <a href="#" class="footer__item-list-item-link block mb-3 text-sm text-gray-500">
+                     </a>
+                 </li>
+                 <li class="footer__item-list-item">
+                     <a href="#" class="footer__item-list-item-link block mb-3 text-sm text-gray-500">
+                     </a>
+                 </li>
+             </ul>
+         </div>
+     </section>
+
+     <div class="border-t border-gray-200">
+         <div class="container px-5 py-8 flex flex-wrap mx-auto items-center">
+             <form class="search__form flex md:flex-no-wrap flex-wrap justify-center md:justify-start">
+                 <input style="box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37)" class="sm:w-64 w-40 bg-gray-100 rounded sm:mr-4 mr-2 border focus:outline-none focus:border-orange-600 text-base py-2 px-4" placeholder="Nhập tên món ăn..." type="text" />
+                 <button style="box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37)" class="inline-flex text-white bg-orange-600 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded">
+                     Tìm kiếm
+                 </button>
+             </form>
+             <span class="inline-flex lg:ml-auto lg:mt-0 mt-6 w-full justify-center md:justify-start md:w-auto">
+                 <a class="text-gray-500">
+                     <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                         <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
+                     </svg>
+                 </a>
+                 <a class="ml-3 text-gray-500">
+                     <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                         <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"></path>
+                     </svg>
+                 </a>
+                 <a class="ml-3 text-gray-500">
+                     <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                         <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+                         <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01"></path>
+                     </svg>
+                 </a>
+                 <a class="ml-3 text-gray-500">
+                     <svg fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="0" class="w-5 h-5" viewBox="0 0 24 24">
+                         <path stroke="none" d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"></path>
+                         <circle cx="4" cy="4" r="2" stroke="none"></circle>
+                     </svg>
+                 </a>
+             </span>
+         </div>
+     </div>
+     <div class="bg-gray-200">
+         <div class="container mx-auto py-4 px-5 flex justify-center items-center sm:flex-row flex-col">
+             <p class="text-gray-500 text-sm text-center sm:text-left">
+                 © 2022 polyfood —
+                 <a href="#" class="text-gray-600 ml-1" target="_blank" rel="noopener noreferrer">@fptpolytechnic</a>
+             </p>
+         </div>
+     </div>
+ </footer>
+ <a style="box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37)" id="cart" href="#" class="rounded-full w-16 h-16 sm:w-20 sm:h-20 bg-orange-600 animate-bounce fixed bottom-8 right-0 flex items-center z-50 justify-center text-gray-800 mr-8 mb-8 shadow-sm border-gray-300 border" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-9 h-9 text-white">
+         <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z" />
+     </svg>
+ </a>
+ <nav style="
+        background: rgba(255, 255, 255, 0.8);
+        box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+        backdrop-filter: blur(2.5px);
+        -webkit-backdrop-filter: blur(2.5px);
+        border-radius: 10px;
+        border: 1px solid rgba(255, 255, 255, 0.18);
+      " class="menu__mobile lg:hidden fixed bottom-0 left-0 right-0 p-3 z-40 text-gray-400">
+     <ul class="flex justify-center items-center gap-6 sm:gap-8">
+         <li>
+             <a href="#">
+                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 sm:w-10">
+                     <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" />
+                 </svg>
+             </a>
+         </li>
+         <li>
+             <a href="#">
+                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 sm:w-11">
+                     <path stroke-linecap="round" stroke-linejoin="round" d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z" />
+                 </svg>
+             </a>
+         </li>
+         <li>
+             <a href="#">
+                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 sm:w-10">
+                     <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 10.5V6a3.75 3.75 0 10-7.5 0v4.5m11.356-1.993l1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 01-1.12-1.243l1.264-12A1.125 1.125 0 015.513 7.5h12.974c.576 0 1.059.435 1.119 1.007zM8.625 10.5a.375.375 0 11-.75 0 .375.375 0 01.75 0zm7.5 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z" />
+                 </svg>
+             </a>
+         </li>
+         <li>
+             <a href="#">
+                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 sm:w-10">
+                     <path stroke-linecap="round" stroke-linejoin="round" d="M12 7.5h1.5m-1.5 3h1.5m-7.5 3h7.5m-7.5 3h7.5m3-9h3.375c.621 0 1.125.504 1.125 1.125V18a2.25 2.25 0 01-2.25 2.25M16.5 7.5V18a2.25 2.25 0 002.25 2.25M16.5 7.5V4.875c0-.621-.504-1.125-1.125-1.125H4.125C3.504 3.75 3 4.254 3 4.875V18a2.25 2.25 0 002.25 2.25h13.5M6 7.5h3v3H6v-3z" />
+                 </svg>
+             </a>
+         </li>
+         <li>
+             <a href="#">
+                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 sm:w-11">
+                     <path stroke-linecap="round" stroke-linejoin="round" d="M8.625 12a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H8.25m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H12m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0h-.375M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                 </svg>
+             </a>
+         </li>
+     </ul>
+ </nav>
+ </body>
+
+ </html>

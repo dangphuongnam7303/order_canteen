@@ -1,0 +1,317 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Dongle:wght@300;400;700&family=Inconsolata:wght@300;400&family=Inter&family=Karla:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&family=Lobster&family=Luxurious+Roman&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Mouse+Memoirs&family=Neonderthaw&family=Nunito:wght@200;300&family=Open+Sans:wght@300&family=Playfair+Display&display=swap');
+@import url(//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css);
+.font {
+  font-family: 'Lobster', cursive;
+}
+*{
+  font-family: 'Montserrat', sans-serif;
+}
+.rating {
+  border: none;
+  float: left;
+}
+
+.rating > input {
+  display: none;
+}
+.rating > label:before {
+  margin: 5px;
+  font-size: 1.25em;
+  font-family: FontAwesome;
+  display: inline-block;
+  content: '\f005';
+}
+
+.rating > .half:before {
+  content: '\f089';
+  position: absolute;
+}
+
+.rating > label {
+  color: #ddd;
+  float: right;
+}
+
+/***** CSS Magic to Highlight Stars on Hover *****/
+
+.rating > input:checked ~ label, /* show gold star when clicked */
+.rating:not(:checked) > label:hover, /* hover current star */
+.rating:not(:checked) > label:hover ~ label {
+  color: #ffd700;
+} /* hover previous stars in list */
+
+.rating > input:checked + label:hover, /* hover current star when changing rating */
+.rating > input:checked ~ label:hover,
+.rating > label:hover ~ input:checked ~ label, /* lighten current selection */
+.rating > input:checked ~ label:hover ~ label {
+  color: #ffed85;
+}
+
+.shadow__menu {
+  border-radius: 16px;
+  background: #ffffff;
+  box-shadow: 20px 20px 60px #d9d9d9, -20px -20px 60px #ffffff;
+}
+
+.shadow__logo {
+  border-radius: 40px;
+  background: linear-gradient(145deg, #e6e6e6, #ffffff);
+  box-shadow: 20px 20px 60px #d9d9d9, -20px -20px 60px #ffffff;
+}
+
+.background__base {
+  background-image: url('../site/IMG/background.png');
+}
+
+.shadow__products {
+  background: #ffffff;
+  box-shadow: 20px 20px 88px #d9d9d9, -20px -20px 88px #ffffff;
+}
+
+.limited__content-2 {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.limited__content-4 {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Chữ không xuống dòng */
+
+
+/* FOOTER */
+
+.anh {
+  position: absolute;
+}
+
+.content {
+  position: relative;
+  background: rgba(0, 0, 0, 0.5);
+  color: #f1f1f1;
+  width: 100%;
+  padding: 20px;
+  height: 500px;
+}
+
+/* trái phải di chuyển */
+
+.button-box {
+  position: relative;
+}
+
+.toggle-btn {
+  cursor: pointer;
+  background: transparent;
+  outline: none;
+  position: relative;
+}
+
+#btn {
+  position: absolute;
+  transition: 0.9s;
+}
+
+#trai {
+  transition: 0.9s;
+}
+
+#phai {
+  transition: 0.9s;
+}
+
+#description {
+  transition: 0.9s;
+}
+
+#comment {
+  transition: 0.9s;
+}
+
+#them {
+  transition: 0.1s;
+}
+
+/* .toggle-btn {
+    border: 1px solid black;
+    border-radius: 3px;
+    width: 100px;
+    height: 30px;
+    display: block;
+    background: linear-gradient(to right, black 50%, white 50%);
+    background-size: 200% 100%;
+    background-position: right bottom;
+    transition: all .5s ease-out;
+}
+
+.toggle-btn:hover {
+    background-position: left bottom;
+}
+
+.sili {
+    text-align: center;
+    font-size: 16px;
+    line-height: 30px;
+    color: black;
+    transition: all .6s ease-out;
+    display: block;
+}
+
+.sili:hover {
+    color: white;
+} */
+/* hover: admin:người bán hàng */
+
+.button {
+  font-weight: bold;
+  font-size: 20px;
+  position: relative;
+}
+
+/* BUTTON EEN */
+
+a.button.one:before,
+a.button.one:after {
+  content: '';
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  transition: all 0.3s ease;
+}
+
+a.button.one:before {
+  top: -2.5%;
+  left: -1%;
+  border-top: 2px solid white;
+  border-left: 2px solid white;
+}
+
+a.button.one:after {
+  bottom: -2.5%;
+  right: -1%;
+  border-bottom: 2px solid white;
+  border-right: 2px solid white;
+}
+
+a.button.one:hover:before,
+a.button.one:hover:after {
+  width: 100%;
+  height: 100%;
+  transition: all 0.5s ease;
+}
+
+/* hover:thanh useer */
+
+/* BUTTON DRIE */
+
+a.button.three:before,
+a.button.three:after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 0;
+  opacity: 0;
+  border-radius: 10px;
+}
+
+a.button.three:before {
+  top: 0;
+  left: 0;
+  border-top: 2px solid red;
+  border-right: 2px solid white;
+}
+
+a.button.three:after {
+  bottom: 0;
+  right: 0;
+  border-bottom: 2px solid red;
+  border-left: 2px solid white;
+}
+
+a.button.three:hover:before {
+  animation: first 0.9s forwards;
+  opacity: 1;
+}
+
+a.button.three:hover:after {
+  animation: second 0.4s forwards;
+}
+
+@keyframes first {
+  0% {
+    width: 0%;
+    height: 0%;
+  }
+  25% {
+    width: 100%;
+    height: 0%;
+  }
+  50% {
+    width: 100%;
+    height: 100%;
+  }
+  100% {
+    width: 100%;
+    height: 95%;
+  }
+}
+
+@keyframes second {
+  0% {
+    width: 0%;
+    height: 0%;
+  }
+  50% {
+    width: 0%;
+    height: 0%;
+  }
+  75% {
+    width: 100%;
+    height: 0%;
+    opacity: 1;
+  }
+  100% {
+    width: 100%;
+    height: 95%;
+    opacity: 1;
+  }
+}
+
+/* Button eight */
+
+a.button.eight:before,
+a.button.eight:after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  border-radius: 5px;
+}
+
+a.button.eight:after {
+  height: 100%;
+  border-bottom: 2px solid red;
+  bottom: 0;
+  left: 0;
+  transition: transform 0.2s ease;
+}
+
+a.button.eight:before {
+  height: 0%;
+  border-top: 2px solid red;
+  bottom: 0;
+  left: 0;
+  transition: height 0.3s ease;
+}
+
+
+a.button.eight:hover:after {
+  transform: scale(1.08);
+  transition: transform 0.4s ease;
+}

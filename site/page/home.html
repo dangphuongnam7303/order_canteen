@@ -1,0 +1,1321 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../../css/style.css" />
+    <link rel="stylesheet" href="../../css/base.css" />
+    <script src="../Javascript/main.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"
+    />
+  </head>
+  <body class="font-montserrat min-w-[170px]">
+    <header
+      class="sticky top-0 z-50 hidden text-gray-700 bg-white border-b border-gray-200 lg:block"
+    >
+      <div
+        class="container flex flex-col flex-wrap items-center p-5 mx-auto md:flex-row"
+      >
+        <a
+          class="flex items-center mb-4 font-medium font title-font md:mb-0"
+          href="#"
+          target="_blank"
+        >
+          <span class="text-orange-600">poly</span
+          ><span class="font-semibold text-blue-600">F</span
+          ><span class="font-semibold text-orange-600">oo</span
+          ><span class="font-semibold text-green-600">d</span>
+        </a>
+        <nav
+          class="flex flex-wrap items-center justify-center text-base md:ml-auto"
+        >
+          <ul class="flex justify-center w-full gap-6 text-sm uppercase menu">
+            <li><a href="#">Trang chủ</a></li>
+            <li><a href="#">Giới thiệu</a></li>
+            <li><a href="#">Sản Phẩm</a></li>
+            <li><a href="#">Blog</a></li>
+            <li>
+              <div class="relative inline-block text-left">
+                <div>
+                  <button
+                    type="button"
+                    id="menu-drop"
+                    aria-expanded="true"
+                    aria-haspopup="true"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="currentColor"
+                      class="w-6 h-6"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M19.5 8.25l-7.5 7.5-7.5-7.5"
+                      />
+                    </svg>
+                  </button>
+                </div>
+                <div
+                  id="sub-menu-drop"
+                  class="absolute right-0 z-10 hidden w-56 mt-2 origin-top-right bg-white rounded-md shadow-lg animate-down ring-1 ring-black ring-opacity-5 focus:outline-none"
+                  role="menu"
+                  aria-orientation="vertical"
+                  aria-labelledby="menu-button"
+                  tabindex="-1"
+                >
+                  <div class="py-1" role="none">
+                    <!-- Active: "bg-gray-100 text-gray-900", Not Active: "text-gray-700" -->
+                    <a
+                      href="#"
+                      class="block px-4 py-2 text-sm text-gray-700"
+                      role="menuitem"
+                      tabindex="-1"
+                      id="menu-item-0"
+                    >
+                      Cài đặt tài khoản
+                    </a>
+                    <a
+                      href="#"
+                      class="block px-4 py-2 text-sm text-gray-700"
+                      role="menuitem"
+                      tabindex="-1"
+                      id="menu-item-1"
+                    >
+                      Hỗ trợ
+                    </a>
+                    <a
+                      href="#"
+                      class="block px-4 py-2 text-sm text-gray-700"
+                      role="menuitem"
+                      tabindex="-1"
+                      id="menu-item-2"
+                    >
+                      Đơn hàng của tôi
+                    </a>
+                    <form method="POST" action="#" role="none">
+                      <button
+                        type="submit"
+                        class="block w-full px-4 py-2 text-sm text-left text-gray-700 uppercase"
+                        role="menuitem"
+                        tabindex="-1"
+                        id="menu-item-3"
+                      >
+                        Đăng xuất
+                      </button>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <section class="text-gray-700 background min-w-[320px]">
+      <div class="container mx-auto">
+        <div class="swiper mySwiper h-auto max-h-[750px]">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <img
+                class="block object-cover w-full h-full"
+                src="../IMG/slide1.jpg"
+                alt=""
+              />
+            </div>
+            <div class="swiper-slide">
+              <img
+                class="block object-cover w-full h-full"
+                src="../IMG/slide2.jpg"
+                alt=""
+              />
+            </div>
+            <div class="swiper-slide">
+              <img
+                class="block object-cover w-full h-full"
+                src="../IMG/slide3.jpg"
+                alt=""
+              />
+            </div>
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+
+        <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+
+        <script>
+          var swiper = new Swiper('.mySwiper', {
+            spaceBetween: 30,
+            pagination: {
+              el: '.swiper-pagination',
+              clickable: true
+            },
+            autoplay: {
+              delay: 2500,
+              disableOnInteraction: false
+            }
+          })
+        </script>
+      </div>
+    </section>
+    <section id="order__step" class="text-gray-700 border-t border-gray-200">
+      <div class="container px-5 py-8 mx-auto lg:py-16">
+        <div class="flex flex-col w-full mb-20 text-center">
+          <h2
+            class="mb-1 text-xs font-medium tracking-widest text-orange-600 title-font"
+          >
+            Làm thế nào tôi có thể đặt hàng?
+          </h2>
+          <h1
+            class="mt-2 text-2xl font-medium text-gray-900 sm:text-3xl title-font"
+          >
+            Các bước đặt hàng
+          </h1>
+        </div>
+        <div class="flex flex-wrap px-5 -m-4 sm:px-3">
+          <div class="relative p-4 md:w-1/3">
+            <div class="step">
+              <img
+                class="absolute top-0 right-0 w-16 animate-bounce"
+                src="../IMG/number-1.png"
+                alt=""
+              />
+            </div>
+
+            <div
+              class="flex flex-col items-center h-full gap-5 p-5 bg-gray-100 rounded-lg sm:p-8"
+            >
+              <div class="flex-grow w-full">
+                <img
+                  class="w-[80%] block mx-auto"
+                  src="../IMG/online-order.png"
+                  alt=""
+                />
+              </div>
+              <h2
+                class="text-base font-medium text-gray-500 md:text-lg title-font"
+              >
+                Chọn đồ ăn yêu thích của bạn
+              </h2>
+            </div>
+          </div>
+          <div class="relative p-4 md:w-1/3">
+            <div class="step">
+              <img
+                class="absolute top-0 right-0 w-16 animate-bounce"
+                src="../IMG/number-2.png"
+                alt=""
+              />
+            </div>
+
+            <div
+              class="flex flex-col items-center h-full gap-5 p-5 bg-gray-100 rounded-lg sm:p-8"
+            >
+              <div class="flex-grow w-full">
+                <img
+                  class="w-[80%] block mx-auto"
+                  src="../IMG/wait-time.png"
+                  alt=""
+                />
+              </div>
+              <h2
+                class="text-base font-medium text-gray-500 md:text-lg title-font"
+              >
+                Chờ thông báo khi món ăn đã sẵn sàng
+              </h2>
+            </div>
+          </div>
+          <div class="relative p-4 md:w-1/3">
+            <div class="step">
+              <img
+                class="absolute top-0 right-0 w-16 animate-bounce"
+                src="../IMG/number-3.png"
+                alt=""
+              />
+            </div>
+
+            <div
+              class="flex flex-col items-center h-full gap-5 p-5 bg-gray-100 rounded-lg sm:p-8"
+            >
+              <div class="flex-grow w-full">
+                <img
+                  class="w-[80%] block mx-auto"
+                  src="../IMG/eat.png"
+                  alt=""
+                />
+              </div>
+              <h2
+                class="text-base font-medium text-gray-500 md:text-lg title-font"
+              >
+                Thưởng thức món ăn !
+              </h2>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="category" class="text-gray-700 border-t border-gray-200">
+      <div class="container px-5 py-24 mx-auto">
+        <div class="flex flex-col w-full mb-20 text-center">
+          <h1
+            class="mb-4 text-2xl font-medium text-gray-900 sm:text-3xl title-font"
+          >
+            Danh mục
+          </h1>
+          <p class="mx-auto text-base leading-relaxed lg:w-2/3">
+            Chúng ta có gì ?
+          </p>
+        </div>
+        <div class="flex flex-wrap -m-2">
+          <div class="w-full p-2 lg:w-1/3 md:w-1/2">
+            <div
+              class="flex items-center h-full p-4 border border-gray-200 rounded-lg"
+            >
+              <img
+                alt="team"
+                class="flex-shrink-0 object-cover object-center w-16 h-16 mr-4"
+                src="../IMG/bread.png"
+              />
+              <div class="flex-grow">
+                <h2 class="font-medium text-gray-900 title-font">Bánh mì</h2>
+                <p class="text-xs text-gray-500">
+                  Bánh mì pate, bánh mì trứng,...
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="w-full p-2 lg:w-1/3 md:w-1/2">
+            <div
+              class="flex items-center h-full p-4 border border-gray-200 rounded-lg"
+            >
+              <img
+                alt="team"
+                class="flex-shrink-0 object-cover object-center w-16 h-16 mr-4"
+                src="../IMG/ramen.png"
+              />
+              <div class="flex-grow">
+                <h2 class="font-medium text-gray-900 title-font">Mì - Phở</h2>
+                <p class="text-xs text-gray-500">
+                  Mì tôm trứng, phở bò, phở gà,...
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="w-full p-2 lg:w-1/3 md:w-1/2">
+            <div
+              class="flex items-center h-full p-4 border border-gray-200 rounded-lg"
+            >
+              <img
+                alt="team"
+                class="flex-shrink-0 object-cover object-center mr-4 w-14 h-14"
+                src="../IMG/cupcake.png"
+              />
+              <div class="flex-grow">
+                <h2 class="font-medium text-gray-900 title-font">
+                  Tráng miệng
+                </h2>
+                <p class="text-xs text-gray-500">
+                  Bánh kem, bánh tráng trộn,...
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="w-full p-2 lg:w-1/3 md:w-1/2">
+            <div
+              class="flex items-center h-full p-4 border border-gray-200 rounded-lg"
+            >
+              <img
+                alt="team"
+                class="flex-shrink-0 object-cover object-center w-16 h-16 mr-4"
+                src="../IMG/fried-rice.png"
+              />
+              <div class="flex-grow">
+                <h2 class="font-medium text-gray-900 title-font">Cơm</h2>
+                <p class="text-xs text-gray-500">
+                  Cơm rang, cơm suất,cơm gà,...
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="w-full p-2 lg:w-1/3 md:w-1/2">
+            <div
+              class="flex items-center h-full p-4 border border-gray-200 rounded-lg"
+            >
+              <img
+                alt="team"
+                class="flex-shrink-0 object-cover object-center w-16 h-16 mr-4"
+                src="../IMG/snack.png"
+              />
+              <div class="flex-grow">
+                <h2 class="font-medium text-gray-900 title-font">Ăn vặt</h2>
+                <p class="text-xs text-gray-500">Bim bim, bánh bao,...</p>
+              </div>
+            </div>
+          </div>
+          <div class="w-full p-2 lg:w-1/3 md:w-1/2">
+            <div
+              class="flex items-center h-full p-4 border border-gray-200 rounded-lg"
+            >
+              <img
+                alt="team"
+                class="flex-shrink-0 object-cover object-center w-16 h-16 mr-4"
+                src="../IMG/soft-drink.png"
+              />
+              <div class="flex-grow">
+                <h2 class="font-medium text-gray-900 title-font">Đồ uống</h2>
+                <p class="text-xs text-gray-500">
+                  Coca, Pepsi,Sting,Trà sữa,...
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="today__menu" class="text-gray-700 border-t border-gray-200">
+      <div class="container px-5 py-24 mx-auto">
+        <div
+          class="flex flex-col flex-wrap items-center w-full mb-20 text-center"
+        >
+          <h1
+            class="mb-2 text-2xl font-medium text-gray-900 sm:text-3xl title-font"
+          >
+            Thực đơn hôm nay
+          </h1>
+          <p
+            class="w-full text-base font-medium leading-relaxed text-orange-600 lg:w-1/2"
+          >
+            " Ăn đã – chuyện khác để sau "
+          </p>
+        </div>
+        <section
+          id="list__products"
+          class="flex px-10 -m-4 space-x-4 overflow-y-scroll"
+        >
+          <div class="w-full p-4 product__item sm:w-1/3">
+            <div class="rounded-xl">
+              <div class="product__img">
+                <img
+                  class="w-full object-cover object-center rounded-t-xl min-w-[200px] lg:min-w-[230px] h-[150px] lg:min-h-[170px] lg:max-h-[171px]"
+                  src="../../content/images/products/banhgio.jpg"
+                  alt="content"
+                />
+              </div>
+              <div
+                class="product__info min-w-[200px] flex flex-col gap-1 rounded-b-xl w-full p-3 border border-gray-300"
+              >
+                <h2 class="font-medium text-gray-900 title-font">Bún bò</h2>
+                <p class="text-xs leading-relaxed limited__content-2">
+                  Bún bò là món ăn được làm từ bún, thịt bò, rau, gia vị và nước
+                  sốt. Bún bò được ăn kèm với rau thơm, hành tây, cà chua, cà
+                </p>
+                <div
+                  class="flex items-center justify-between my-1 product__cart-rate"
+                >
+                  <span class="text-sm text-[#FAB500]">★★★★★</span>
+                  <span class="text-sm font-medium text-orange-600"
+                    >30.000đ</span
+                  >
+                </div>
+                <button
+                  class="flex items-center justify-center w-full gap-2 px-4 py-2 text-xs font-medium text-white bg-orange-600 border border-transparent rounded-md add-to-cart sm:gap-3 hover:bg-orange-600 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-orange-600"
+                >
+                  <span> Thêm vào giỏ </span>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    class="w-5 h-5"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z"
+                    />
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="w-full p-4 product__item sm:w-1/3">
+            <div class="rounded-xl">
+              <div class="product__img">
+                <img
+                  class="w-full object-cover object-center rounded-t-xl min-w-[200px] lg:min-w-[230px] h-[150px] lg:h-[170px]"
+                  src="../../content/images/products/banhgio.jpg"
+                  alt="content"
+                />
+              </div>
+              <div
+                class="product__info min-w-[200px] flex flex-col gap-1 rounded-b-xl w-full p-3 border border-gray-300"
+              >
+                <h2 class="font-medium text-gray-900 title-font">Bún bò</h2>
+                <p class="text-xs leading-relaxed limited__content-2">
+                  Bún bò là món ăn được làm từ bún, thịt bò, rau, gia vị và nước
+                  sốt. Bún bò được ăn kèm với rau thơm, hành tây, cà chua, cà
+                </p>
+                <div
+                  class="flex items-center justify-between my-1 product__cart-rate"
+                >
+                  <span class="text-sm text-[#FAB500]">★★★★★</span>
+                  <span class="text-sm font-medium text-orange-600"
+                    >30.000đ</span
+                  >
+                </div>
+                <button
+                  class="flex items-center justify-center w-full gap-2 px-4 py-2 text-xs font-medium text-white bg-orange-600 border border-transparent rounded-md add-to-cart sm:gap-3 hover:bg-orange-600 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-orange-600"
+                >
+                  <span> Thêm vào giỏ </span>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    class="w-5 h-5"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z"
+                    />
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="w-full p-4 product__item sm:w-1/3">
+            <div class="rounded-xl">
+              <div class="product__img">
+                <img
+                  class="w-full object-cover object-center rounded-t-xl min-w-[200px] lg:min-w-[230px] h-[150px] lg:h-[170px]"
+                  src="../../content/images/products/banhgio.jpg"
+                  alt="content"
+                />
+              </div>
+              <div
+                class="product__info min-w-[200px] flex flex-col gap-1 rounded-b-xl w-full p-3 border border-gray-300"
+              >
+                <h2 class="font-medium text-gray-900 title-font">Bún bò</h2>
+                <p class="text-xs leading-relaxed limited__content-2">
+                  Bún bò là món ăn được làm từ bún, thịt bò, rau, gia vị và nước
+                  sốt. Bún bò được ăn kèm với rau thơm, hành tây, cà chua, cà
+                </p>
+                <div
+                  class="flex items-center justify-between my-1 product__cart-rate"
+                >
+                  <span class="text-sm text-[#FAB500]">★★★★★</span>
+                  <span class="text-sm font-medium text-orange-600"
+                    >30.000đ</span
+                  >
+                </div>
+                <button
+                  class="flex items-center justify-center w-full gap-2 px-4 py-2 text-xs font-medium text-white bg-orange-600 border border-transparent rounded-md add-to-cart sm:gap-3 hover:bg-orange-600 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-orange-600"
+                >
+                  <span> Thêm vào giỏ </span>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    class="w-5 h-5"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z"
+                    />
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="w-full p-4 product__item sm:w-1/3">
+            <div class="rounded-xl">
+              <div class="product__img">
+                <img
+                  class="w-full object-cover object-center rounded-t-xl min-w-[200px] lg:min-w-[230px] h-[150px] lg:h-[170px]"
+                  src="../../content/images/products/banhgio.jpg"
+                  alt="content"
+                />
+              </div>
+              <div
+                class="product__info min-w-[200px] flex flex-col gap-1 rounded-b-xl w-full p-3 border border-gray-300"
+              >
+                <h2 class="font-medium text-gray-900 title-font">Bún bò</h2>
+                <p class="text-xs leading-relaxed limited__content-2">
+                  Bún bò là món ăn được làm từ bún, thịt bò, rau, gia vị và nước
+                  sốt. Bún bò được ăn kèm với rau thơm, hành tây, cà chua, cà
+                </p>
+                <div
+                  class="flex items-center justify-between my-1 product__cart-rate"
+                >
+                  <span class="text-sm text-[#FAB500]">★★★★★</span>
+                  <span class="text-sm font-medium text-orange-600"
+                    >30.000đ</span
+                  >
+                </div>
+                <button
+                  class="flex items-center justify-center w-full gap-2 px-4 py-2 text-xs font-medium text-white bg-orange-600 border border-transparent rounded-md add-to-cart sm:gap-3 hover:bg-orange-600 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-orange-600"
+                >
+                  <span> Thêm vào giỏ </span>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    class="w-5 h-5"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z"
+                    />
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="w-full p-4 product__item sm:w-1/3">
+            <div class="rounded-xl">
+              <div class="product__img">
+                <img
+                  class="w-full object-cover object-center rounded-t-xl min-w-[200px] lg:min-w-[230px] h-[150px] lg:h-[170px]"
+                  src="../../content/images/products/banhmi.jpg"
+                  alt="content"
+                />
+              </div>
+              <div
+                class="product__info min-w-[200px] flex flex-col gap-1 rounded-b-xl w-full p-3 border border-gray-300"
+              >
+                <h2 class="font-medium text-gray-900 title-font">Bún bò</h2>
+                <p class="text-xs leading-relaxed limited__content-2">
+                  Bún bò là món ăn được làm từ bún, thịt bò, rau, gia vị và nước
+                  sốt. Bún bò được ăn kèm với rau thơm, hành tây, cà chua, cà
+                </p>
+                <div
+                  class="flex items-center justify-between my-1 product__cart-rate"
+                >
+                  <span class="text-sm text-[#FAB500]">★★★★★</span>
+                  <span class="text-sm font-medium text-orange-600"
+                    >30.000đ</span
+                  >
+                </div>
+                <button
+                  class="flex items-center justify-center w-full gap-2 px-4 py-2 text-xs font-medium text-white bg-orange-600 border border-transparent rounded-md add-to-cart sm:gap-3 hover:bg-orange-600 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-orange-600"
+                >
+                  <span> Thêm vào giỏ </span>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    class="w-5 h-5"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z"
+                    />
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="w-full p-4 product__item sm:w-1/3">
+            <div class="rounded-xl">
+              <div class="product__img">
+                <img
+                  class="w-full object-cover object-center rounded-t-xl min-w-[200px] lg:min-w-[230px] h-[150px] lg:h-[170px]"
+                  src="../../content/images/products/banhmigiocha.jpg"
+                  alt="content"
+                />
+              </div>
+              <div
+                class="product__info min-w-[200px] flex flex-col gap-1 rounded-b-xl w-full p-3 border border-gray-300"
+              >
+                <h2 class="font-medium text-gray-900 title-font">Bún bò</h2>
+                <p class="text-xs leading-relaxed limited__content-2">
+                  Bún bò là món ăn được làm từ bún, thịt bò, rau, gia vị và nước
+                  sốt. Bún bò được ăn kèm với rau thơm, hành tây, cà chua, cà
+                </p>
+                <div
+                  class="flex items-center justify-between my-1 product__cart-rate"
+                >
+                  <span class="text-sm text-[#FAB500]">★★★★★</span>
+                  <span class="text-sm font-medium text-orange-600"
+                    >30.000đ</span
+                  >
+                </div>
+                <button
+                  class="flex items-center justify-center w-full gap-2 px-4 py-2 text-xs font-medium text-white bg-orange-600 border border-transparent rounded-md add-to-cart sm:gap-3 hover:bg-orange-600 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-orange-600"
+                >
+                  <span> Thêm vào giỏ </span>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    class="w-5 h-5"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z"
+                    />
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- Phân trang -->
+        <div class="flex items-center justify-center gap-2 mt-5 pagination">
+          <button
+            class="flex items-center justify-center gap-2 p-2 text-sm font-medium text-white bg-orange-500 border border-transparent rounded-md pagination__btn hover:bg-indigo-600 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-orange-600"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="w-5 h-5"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M15 19l-7-7 7-7"
+              />
+            </svg>
+          </button>
+          <button
+            class="flex items-center justify-center gap-2 px-4 py-2 text-sm font-medium text-white bg-orange-500 border border-transparent rounded-md pagination__btn hover:bg-indigo-600 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-orange-600"
+          >
+            <span>1</span>
+          </button>
+          <button
+            class="flex items-center justify-center gap-2 px-4 py-2 text-sm font-medium text-white bg-orange-500 border border-transparent rounded-md pagination__btn hover:bg-indigo-600 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-orange-600"
+          >
+            <span>2</span>
+          </button>
+          <button
+            class="flex items-center justify-center gap-2 px-4 py-2 text-sm font-medium text-white bg-orange-500 border border-transparent rounded-md pagination__btn hover:bg-indigo-600 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-orange-600"
+          >
+            <span>3</span>
+          </button>
+          <button
+            class="flex items-center justify-center p-2 text-sm font-medium text-white bg-orange-500 border border-transparent rounded-md pagination__btn hover:bg-indigo-600 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-orange-600"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="w-5 h-5"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M9 5l7 7-7 7"
+              />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section id="criteria" class="mt-5 text-gray-700">
+      <h1
+        class="text-2xl font-medium text-center text-gray-900 sm:text-3xl title-font"
+      >
+        Tiêu chí của chúng tôi
+      </h1>
+
+      <div
+        class="container flex flex-wrap justify-between px-5 py-8 mx-auto sm:py-16"
+      >
+        <div class="lg:w-[60%] w-full mb-10 lg:mb-0 rounded-lg overflow-hidden">
+          <img
+            alt="feature"
+            class="object-cover object-center w-full h-full"
+            src="../IMG/canteen.jpg"
+          />
+        </div>
+        <div class="flex flex-col flex-wrap -mb-10 text-left lg:py-6 lg:w-1/3">
+          <div class="flex items-center gap-5 mb-10 lg:items-start">
+            <div
+              class="inline-flex items-center justify-center w-12 h-12 mb-5 text-orange-600 bg-indigo-100 rounded-full"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="w-6 h-6"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.563.563 0 00-.586 0L6.982 20.54a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.563.563 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z"
+                />
+              </svg>
+            </div>
+            <div class="flex-grow">
+              <h2 class="mb-2 text-lg font-medium text-orange-600 title-font">
+                Chất lượng
+              </h2>
+              <p class="text-base leading-relaxed">
+                Chúng tôi luôn đảm bảo chất lượng món ăn của mình
+              </p>
+            </div>
+          </div>
+          <div class="flex items-center gap-5 mb-10 lg:items-start">
+            <div
+              class="inline-flex items-center justify-center w-12 h-12 mb-5 text-orange-600 bg-indigo-100 rounded-full"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="w-6 h-6"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z"
+                />
+              </svg>
+            </div>
+            <div class="flex-grow">
+              <h2 class="mb-2 text-lg font-medium text-blue-600 title-font">
+                Thời gian
+              </h2>
+              <p class="text-base leading-relaxed">
+                Thời gian đặt món ăn của bạn sẽ được đảm bảo
+              </p>
+            </div>
+          </div>
+          <div class="flex items-center gap-5 mb-10 lg:items-start">
+            <div
+              class="inline-flex items-center justify-center w-12 h-12 mb-5 text-orange-600 bg-indigo-100 rounded-full"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="w-6 h-6"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M2.25 18.75a60.07 60.07 0 0115.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75M3.75 4.5v.75A.75.75 0 013 6h-.75m0 0v-.375c0-.621.504-1.125 1.125-1.125H20.25M2.25 6v9m18-10.5v.75c0 .414.336.75.75.75h.75m-1.5-1.5h.375c.621 0 1.125.504 1.125 1.125v9.75c0 .621-.504 1.125-1.125 1.125h-.375m1.5-1.5H21a.75.75 0 00-.75.75v.75m0 0H3.75m0 0h-.375a1.125 1.125 0 01-1.125-1.125V15m1.5 1.5v-.75A.75.75 0 003 15h-.75M15 10.5a3 3 0 11-6 0 3 3 0 016 0zm3 0h.008v.008H18V10.5zm-12 0h.008v.008H6V10.5z"
+                />
+              </svg>
+            </div>
+
+            <div class="flex-grow">
+              <h2 class="mb-2 text-lg font-medium text-green-600 title-font">
+                Giá cả
+              </h2>
+              <p class="text-base leading-relaxed">
+                Ăn ngon mà không phải lo lắng về giá cả
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="text-gray-700 border-t border-gray-200">
+      <div class="container px-5 py-24 mx-auto">
+        <div class="w-full mx-auto text-center xl:w-1/2 lg:w-3/4">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="currentColor"
+            class="inline-block w-8 h-8 mb-8 text-gray-400"
+            viewBox="0 0 975.036 975.036"
+          >
+            <path
+              d="M925.036 57.197h-304c-27.6 0-50 22.4-50 50v304c0 27.601 22.4 50 50 50h145.5c-1.9 79.601-20.4 143.3-55.4 191.2-27.6 37.8-69.399 69.1-125.3 93.8-25.7 11.3-36.8 41.7-24.8 67.101l36 76c11.6 24.399 40.3 35.1 65.1 24.399 66.2-28.6 122.101-64.8 167.7-108.8 55.601-53.7 93.7-114.3 114.3-181.9 20.601-67.6 30.9-159.8 30.9-276.8v-239c0-27.599-22.401-50-50-50zM106.036 913.497c65.4-28.5 121-64.699 166.9-108.6 56.1-53.7 94.4-114.1 115-181.2 20.6-67.1 30.899-159.6 30.899-277.5v-239c0-27.6-22.399-50-50-50h-304c-27.6 0-50 22.4-50 50v304c0 27.601 22.4 50 50 50h145.5c-1.9 79.601-20.4 143.3-55.4 191.2-27.6 37.8-69.4 69.1-125.3 93.8-25.7 11.3-36.8 41.7-24.8 67.101l35.9 75.8c11.601 24.399 40.501 35.2 65.301 24.399z"
+            ></path>
+          </svg>
+          <!-- Lời ngỏ -->
+          <p class="text-lg leading-relaxed">
+            Chúng tôi luôn đặt sự hài lòng của khách hàng lên hàng đầu và luôn
+            cố gắng để mang đến cho khách hàng những trải nghiệm tuyệt vời nhất.
+          </p>
+          <span
+            class="inline-block w-10 h-1 mt-8 mb-6 bg-orange-600 rounded"
+          ></span>
+          <h2 class="text-sm font-medium tracking-wider">
+            <span class="text-orange-600">poly</span
+            ><span class="font-semibold text-blue-600">F</span
+            ><span class="font-semibold text-orange-600">oo</span
+            ><span class="font-semibold text-green-600">d</span>
+          </h2>
+          <p class="mt-2 text-gray-500 uppercase">FPT Polytechnic</p>
+        </div>
+      </div>
+    </section>
+    <section class="relative text-gray-700">
+      <div class="absolute inset-0 bg-gray-300">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3723.863855883132!2d105.74459305018287!3d21.038132792766206!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x313454b991d80fd5%3A0x53cefc99d6b0bf6f!2zVHLGsOG7nW5nIENhbyDEkeG6s25nIEZQVCBQb2x5dGVjaG5pYw!5e0!3m2!1svi!2s!4v1669010289456!5m2!1svi!2s"
+          width="100%"
+          height="100%"
+          frameborder="0"
+          marginheight="0"
+          marginwidth="0"
+          title="map"
+          scrolling="no"
+        ></iframe>
+      </div>
+      <div class="container flex px-5 py-24 mx-auto">
+        <form
+          style="
+            background: rgba(255, 255, 255, 0.8);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+            backdrop-filter: blur(2.5px);
+            -webkit-backdrop-filter: blur(2.5px);
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.18);
+          "
+          class="relative z-10 w-full mt-10 bg-center bg-no-repeat bg-cover lg:w-1/3 md:w-1/2 rounded-3xl md:ml-auto md:mt-0"
+        >
+          <div class="flex flex-col w-full h-full p-8 form__group rounded-3xl">
+            <h2 class="mb-1 text-lg font-medium text-black title-font">
+              Liên hệ
+            </h2>
+            <p class="mb-5 leading-relaxed text-gray-500">
+              Bạn có thể liên hệ với chúng tôi bằng cách điền vào mẫu dưới đây
+            </p>
+            <input
+              style="
+                background: rgba(255, 255, 255, 0.2);
+                box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+                backdrop-filter: blur(2.5px);
+                -webkit-backdrop-filter: blur(2.5px);
+                border-radius: 10px;
+                border: 1px solid rgba(255, 255, 255, 0.18);
+              "
+              class="px-4 py-2 mb-4 text-base border rounded focus:outline-none focus:border-orange-600"
+              placeholder="Email"
+              type="email"
+            />
+            <textarea
+              style="
+                background: rgba(255, 255, 255, 0.2);
+                box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+                backdrop-filter: blur(2.5px);
+                -webkit-backdrop-filter: blur(2.5px);
+                border-radius: 10px;
+                border: 1px solid rgba(255, 255, 255, 0.18);
+              "
+              class="h-32 px-4 py-2 mb-4 text-base border rounded resize-none backdrop-blur focus:outline-none focus:border-orange-600"
+              placeholder="Nội dung"
+            ></textarea>
+            <button
+              style="box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37)"
+              class="px-6 py-2 text-lg text-white bg-orange-600 border-0 rounded focus:outline-none hover:bg-indigo-700"
+            >
+              Gửi
+            </button>
+            <p class="mt-3 text-xs text-gray-500">
+              Chúng tôi sẽ liên hệ với bạn trong thời gian sớm nhất
+            </p>
+          </div>
+        </form>
+      </div>
+    </section>
+    <footer class="pt-24 mx-auto text-gray-700">
+      <section
+        class="grid w-full grid-cols-2 gap-4 px-8 md:grid-cols-3 lg:grid-cols-4 md:px-14 lg:px-20"
+      >
+        <div class="ml-5 footer__item-logo">
+          <img class="h-16" src="../IMG/logo.png" alt="logo" />
+          <p
+            class="footer-item-title--desc mt-4 text-gray-500 text-sm max-w-[220px]"
+          >
+            Website được phát triển bởi đội ngũ sinh viên FPT Polytechnic.
+          </p>
+        </div>
+        <div class="mb-5 ml-5 footer__item">
+          <h1 class="block mb-3 text-xl font-bold footer__item-title">
+            Liên hệ
+          </h1>
+          <ul class="mt-3 footer__item-list">
+            <li class="footer__item-list-item">
+              <a
+                href="#"
+                class="block mb-3 text-sm text-gray-500 footer__item-list-item-link"
+              >
+                Giới thiệu
+              </a>
+            </li>
+            <li class="footer__item-list-item">
+              <a
+                href="#"
+                class="block mb-3 text-sm text-gray-500 footer__item-list-item-link"
+              >
+                Góp ý
+              </a>
+            </li>
+            <li class="footer__item-list-item">
+              <a
+                href="#"
+                class="block mb-3 text-sm text-gray-500 footer__item-list-item-link"
+              >
+                Tuyển dụng
+              </a>
+            </li>
+            <li class="footer__item-list-item">
+              <a
+                href="#"
+                class="block mb-3 text-sm text-gray-500 footer__item-list-item-link"
+              >
+                Điều khoản
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="mb-5 ml-5 footer__item">
+          <h1 class="block mb-3 text-xl font-bold footer__item-title">
+            Hỗ trợ
+          </h1>
+          <ul class="mt-3 footer__item-list">
+            <li class="footer__item-list-item">
+              <a
+                href="#"
+                class="block mb-3 text-sm text-gray-500 footer__item-list-item-link"
+              >
+                Hướng dẫn mua hàng
+              </a>
+            </li>
+            <li class="footer__item-list-item">
+              <a
+                href="#"
+                class="block mb-3 text-sm text-gray-500 footer__item-list-item-link"
+              >
+                Hướng dẫn thanh toán
+              </a>
+            </li>
+            <li class="footer__item-list-item">
+              <a
+                href="#"
+                class="block mb-3 text-sm text-gray-500 footer__item-list-item-link"
+              >
+                Khiếu nại
+              </a>
+            </li>
+
+            <li class="footer__item-list-item">
+              <a
+                href="#"
+                class="block mb-3 text-sm text-gray-500 footer__item-list-item-link"
+              >
+                FAQs
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="mb-5 ml-5 footer__item">
+          <h1 class="block mb-3 text-xl font-bold footer__item-title">
+            ĐỊA CHỈ
+          </h1>
+          <ul class="mt-3 footer__item-list">
+            <li class="footer__item-list-item">
+              <a
+                href="#"
+                class="block mb-3 text-sm text-gray-500 footer__item-list-item-link"
+              >
+                Tòa nhà FPT Polytechnic, P. Trịnh Văn Bô, Xuân Phương, Nam Từ
+                Liêm, Hà Nội, Việt Nam
+              </a>
+            </li>
+            <li class="footer__item-list-item">
+              <a
+                href="#"
+                class="block mb-3 text-sm text-gray-500 footer__item-list-item-link"
+              >
+                https://caodang.fpt.edu.vn/
+              </a>
+            </li>
+            <li class="footer__item-list-item">
+              <a
+                href="#"
+                class="block mb-3 text-sm text-gray-500 footer__item-list-item-link"
+              >
+                098.172.5836
+              </a>
+            </li>
+            <li class="footer__item-list-item">
+              <a
+                href="#"
+                class="block mb-3 text-sm text-gray-500 footer__item-list-item-link"
+              >
+              </a>
+            </li>
+            <li class="footer__item-list-item">
+              <a
+                href="#"
+                class="block mb-3 text-sm text-gray-500 footer__item-list-item-link"
+              >
+              </a>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <div class="border-t border-gray-200">
+        <div class="container flex flex-wrap items-center px-5 py-8 mx-auto">
+          <form
+            class="flex flex-wrap justify-center search__form md:flex-no-wrap md:justify-start"
+          >
+            <input
+              style="box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37)"
+              class="w-40 px-4 py-2 mr-2 text-base bg-gray-100 border rounded sm:w-64 sm:mr-4 focus:outline-none focus:border-orange-600"
+              placeholder="Nhập tên món ăn..."
+              type="text"
+            />
+            <button
+              style="box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37)"
+              class="inline-flex px-6 py-2 text-white bg-orange-600 border-0 rounded focus:outline-none hover:bg-indigo-600"
+            >
+              Tìm kiếm
+            </button>
+          </form>
+          <span
+            class="inline-flex justify-center w-full mt-6 lg:ml-auto lg:mt-0 md:justify-start md:w-auto"
+          >
+            <a class="text-gray-500">
+              <svg
+                fill="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                class="w-5 h-5"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"
+                ></path>
+              </svg>
+            </a>
+            <a class="ml-3 text-gray-500">
+              <svg
+                fill="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                class="w-5 h-5"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"
+                ></path>
+              </svg>
+            </a>
+            <a class="ml-3 text-gray-500">
+              <svg
+                fill="none"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                class="w-5 h-5"
+                viewBox="0 0 24 24"
+              >
+                <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+                <path
+                  d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01"
+                ></path>
+              </svg>
+            </a>
+            <a class="ml-3 text-gray-500">
+              <svg
+                fill="currentColor"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="0"
+                class="w-5 h-5"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke="none"
+                  d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"
+                ></path>
+                <circle cx="4" cy="4" r="2" stroke="none"></circle>
+              </svg>
+            </a>
+          </span>
+        </div>
+      </div>
+      <div class="bg-gray-200">
+        <div
+          class="container flex flex-col items-center justify-center px-5 py-4 mx-auto sm:flex-row"
+        >
+          <p class="text-sm text-center text-gray-500 sm:text-left">
+            © 2022 polyfood —
+            <a
+              href="#"
+              class="ml-1 text-gray-600"
+              target="_blank"
+              rel="noopener noreferrer"
+              >@fptpolytechnic</a
+            >
+          </p>
+        </div>
+      </div>
+    </footer>
+    <a
+      style="box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37)"
+      id="cart"
+      href="#"
+      class="fixed right-0 z-50 flex items-center justify-center w-16 h-16 mb-8 mr-8 text-gray-800 bg-orange-600 border border-gray-300 rounded-full shadow-sm sm:w-20 sm:h-20 animate-bounce bottom-8"
+      target="_blank"
+      ><svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+        class="text-white w-9 h-9"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z"
+        />
+      </svg>
+    </a>
+    <nav
+      style="
+        background: rgba(255, 255, 255, 0.8);
+        box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+        backdrop-filter: blur(2.5px);
+        -webkit-backdrop-filter: blur(2.5px);
+        border-radius: 10px;
+        border: 1px solid rgba(255, 255, 255, 0.18);
+      "
+      class="fixed bottom-0 left-0 right-0 z-40 p-3 text-gray-400 menu__mobile lg:hidden"
+    >
+      <ul class="flex items-center justify-center gap-6 sm:gap-8">
+        <li>
+          <a href="#">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="w-8 sm:w-10"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25"
+              />
+            </svg>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="w-8 sm:w-11"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z"
+              />
+            </svg>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="w-8 sm:w-10"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M15.75 10.5V6a3.75 3.75 0 10-7.5 0v4.5m11.356-1.993l1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 01-1.12-1.243l1.264-12A1.125 1.125 0 015.513 7.5h12.974c.576 0 1.059.435 1.119 1.007zM8.625 10.5a.375.375 0 11-.75 0 .375.375 0 01.75 0zm7.5 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z"
+              />
+            </svg>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="w-8 sm:w-10"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M12 7.5h1.5m-1.5 3h1.5m-7.5 3h7.5m-7.5 3h7.5m3-9h3.375c.621 0 1.125.504 1.125 1.125V18a2.25 2.25 0 01-2.25 2.25M16.5 7.5V18a2.25 2.25 0 002.25 2.25M16.5 7.5V4.875c0-.621-.504-1.125-1.125-1.125H4.125C3.504 3.75 3 4.254 3 4.875V18a2.25 2.25 0 002.25 2.25h13.5M6 7.5h3v3H6v-3z"
+              />
+            </svg>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="w-8 sm:w-11 top-14"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M8.625 12a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H8.25m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H12m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0h-.375M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+              />
+            </svg>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </body>
+</html>
